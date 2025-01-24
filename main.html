@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placement Portal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      background: #007BFF;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    .admin-btn {
+      background: #FF6F61;
+    }
+    .admin-btn:hover {
+      background: #d3544b;
+    }
+    .student-btn {
+      background: #28a745;
+    }
+    .student-btn:hover {
+      background: #218838;
+    }
+    .recruiter-btn {
+      background: #ffc107;
+      color: #333;
+    }
+    .recruiter-btn:hover {
+      background: #e0a800;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Placement Platform</h1>
+    <p>Select your role to proceed:</p>
+    <a href="admin.html" class="btn admin-btn">Admin</a>
+    <a href="student.html" class="btn student-btn">Student</a>
+    <a href="recruiter.html" class="btn recruiter-btn">Recruiter</a>
+  </div>
+</body>
+</html>
