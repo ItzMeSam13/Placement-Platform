@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>Student Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login, .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 380px; /* Adjusted width */
+            max-height: 90vh; /* Allow container to take up more space vertically */
+            text-align: center;
+            overflow-y: auto; /* Ensure content is scrollable if necessary */
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: left;
+            color: blue;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #6f6f6f;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #007bff;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 12px 18px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        p a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login" id="login-page">
+        <h1>Student Login</h1>
+        <form action="student_dashboard" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showSignUpForm()">Sign up</a></p>
+    </div>
+    <div class="container" id="student-details-page" style="display: none;">
+        <form action="/submit_student_details" method="post" enctype="multipart/form-data">
+            <h1>STUDENT DETAILS FORM</h1>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date Of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea name="address" id="address" rows="4" placeholder="Enter your address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="email-details">Email</label>
+                <input type="email" id="email-details" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="verification">Verification Code</label>
+                <input type="number" id="verification" name="verification" placeholder="Enter OTP" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
+            <div class="form-group">
+                <label for="college">College Name</label>
+                <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+            </div>
+            <div class="form-group">
+                <label for="branch">Branch Name</label>
+                <input type="text" id="branch" name="branch" placeholder="Enter your branch" required>
+            </div>
+            <div class="form-group">
+                <label for="resume">Upload Resume</label>
+                <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx" required>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+    <script>
+        function showSignUpForm() {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('student-details-page').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
