@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="coleege.css">
+</head>
+<body>
+    <div class="login" id="login-page">
+        <h1>Student Login</h1>
+        <form action="student_dashboard" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showSignUpForm()">Sign up</a></p>
+    </div>
+
+    <div class="container" id="student-details-page" style="display: none;">
+        <form action="/submit_student_details" method="post" enctype="multipart/form-data">
+            <h1>College Registration</h1>
+
+            <!-- College Information Section -->
+            <div class="subheader">College Information</div>
+            <div class="section">
+                <div class="form-group">
+                    <label for="college">College Name</label>
+                    <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+                </div>
+                <div class="form-group">
+                    <label for="college-logo">College Logo</label>
+                    <input type="file" id="college-logo" name="college-logo" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="website">College Website</label>
+                    <input type="url" id="website" name="website" placeholder="Enter your college website" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea name="address" id="address" rows="4" placeholder="Enter your college address" required></textarea>
+                </div>
+            </div>
+
+            <!-- Placement Policy Section -->
+            <div class="subheader">Placement Policy</div>
+            <div class="section">
+                <div class="form-group">
+                    <label for="eligibility">Eligibility Criteria</label>
+                    <textarea name="eligibility" id="eligibility" rows="4" placeholder="Enter eligibility criteria" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="placement-rules">Placement Rules</label>
+                    <textarea name="placement-rules" id="placement-rules" rows="4" placeholder="Enter placement rules" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="session-start">Placement Season Start Date</label>
+                    <input type="date" id="session-start" name="session-start" required>
+                </div>
+                <div class="form-group">
+                    <label for="session-end">Placement Season End Date</label>
+                    <input type="date" id="session-end" name="session-end" required>
+                </div>
+            </div>
+
+            <!-- Requirements Section -->
+            <div class="subheader">Requirements</div>
+            <div class="section">
+                <div class="form-group">
+                    <label for="student-documents">Documents Required from Students</label>
+                    <textarea name="student-documents" id="student-documents" rows="4" placeholder="Enter required documents from students" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="recruiter-documents">Recruiter Requirements</label>
+                    <textarea name="recruiter-documents" id="recruiter-documents" rows="4" placeholder="Enter recruiter requirements" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="student-data">Student Data to Collect</label>
+                    <textarea name="student-data" id="student-data" rows="4" placeholder="Enter student data to collect" required></textarea>
+                </div>
+            </div>
+
+            <!-- Contact Details Section -->
+            <div class="subheader">Contact Details</div>
+            <div class="section">
+                <div class="form-group">
+                    <label for="contact-name">Contact Person Name</label>
+                    <input type="text" id="contact-name" name="contact-name" placeholder="Enter contact person's name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Contact Person Email</label>
+                    <input type="email" id="contact-email" name="contact-email" placeholder="Enter contact person's email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-phone">Contact Person Phone Number</label>
+                    <input type="tel" id="contact-phone" name="contact-phone" placeholder="Enter contact person's phone number" required>
+                </div>
+            </div>
+
+            <!-- Password Details Section (Moved to the bottom) -->
+            <div class="subheader">Password Details</div>
+            <div class="section">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+            </div>
+
+            <!-- Buttons Section -->
+            <div class="buttons-container">
+                <button type="submit" class="btn">Submit</button>
+                <button type="button" class="btn back-btn" onclick="goBack()">Back</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function showSignUpForm() {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('student-details-page').style.display = 'block';
+        }
+
+        function goBack() {
+            // Hide the details form and show the login page
+            document.getElementById('student-details-page').style.display = 'none';
+            document.getElementById('login-page').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
