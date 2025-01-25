@@ -1,66 +1,85 @@
 * {
-	box-sizing: border-box; /* Ensures padding and border are included in width/height */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /* To ensure padding doesn't affect element sizing */
 }
+
+html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
 .flex-center {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
-body {
-	font-family: Arial, sans-serif;
-	background-color: rgb(175, 217, 253);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+h1{
+    margin-bottom: 20px;
+    text-align: left;
+    color: blue;
 }
 .main {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	padding: 50px;
-	background-color: rgb(203, 255, 200);
-	border-radius: 10px;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-	gap: 10px;
-	width: 100%;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    max-width: 100%;
+    width: 30rem; 
+}  
 .Container {
-	width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    max-width: 100%;
+    width: 30rem; 
 }
-input {
-	width: 100%;
-	height: 2rem;
-	padding: 0.5rem;
-	background-color: lightgray;
+
+input, button {
+    width: 100%; 
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+    font-size: 1rem;
+    background-color: white;
+    margin-bottom: 10px; 
 }
-input,
 button {
-	width: 100%; /* Same width for both inputs and buttons */
-	height: 2.5rem; /* Uniform height */
-	padding: 0.5rem; /* Consistent padding */
-	border-radius: 5px;
-	border: 1px solid black;
-	font-size: 1rem; /* Font size for consistency */
-	background-color: white; /* Optional: ensures a consistent background */
+    background-color: rgb(54, 54, 251);
+    color: white; /* Ensures text is white */
+    font-weight: bold;
 }
-form {
-	width: 100%;
-}
-button {
-	background-color: rgb(54, 54, 251);
-}
+
 button:hover {
-	background-color: lightslategray; /* Blue background on hover */
-	color: white; /* Text color changes to white */
-	cursor: pointer; /* Adds a pointer cursor */
-	transition: 0.3s; /* Smooth transition */
+    background-color: lightslategray;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+
 input:hover {
-	border: 2px solid rgb(97, 92, 92);
-	transition: 0.1s;
+    border: 2px solid rgb(97, 92, 92);
+    transition: 0.1s;
+}
+
+form {
+    width: 100%; 
 }
