@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Placement Report</title>
+  <link rel="stylesheet" href="generatereport.css">
+</head>
+<body>
+
+  <div class="report-container">
+    <header class="report-header">
+      <h1>Generate Placement Report</h1>
+      <p>Select filters to generate a comprehensive report of the placement activities.</p>
+    </header>
+
+    <form class="report-form" id="reportForm">
+      <!-- Date Range -->
+      <div class="form-group">
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" name="start-date" placeholder="DD/MM/YYYY" required>
+      </div>
+
+      <div class="form-group">
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" name="end-date" placeholder="DD/MM/YYYY" required>
+      </div>
+
+      <!-- Placement Status -->
+      <div class="form-group">
+        <label for="placement-status">Placement Status</label>
+        <select id="placement-status" name="placement-status" required>
+          <option value="">Select Status</option>
+          <option value="all">All</option>
+          <option value="placed">Placed</option>
+          <option value="not-placed">Not Placed</option>
+        </select>
+      </div>
+
+      <!-- Recruiter Type -->
+      <div class="form-group">
+        <label for="recruiter-type">Recruiter Type</label>
+        <select id="recruiter-type" name="recruiter-type" required>
+          <option value="">Select Type</option>
+          <option value="all">All</option>
+          <option value="private">Private</option>
+          <option value="government">Government</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group">
+        <button type="submit" class="generate-btn">Generate Report</button>
+      </div>
+    </form>
+
+    <div class="report-preview" id="reportPreview">
+      <!-- Report Preview will appear here -->
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-btn-container">
+      <button type="button" class="back-btn" onclick="goBack()">Back</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 PlacementHub Admin. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript to dynamically show a preview of the selected data
+    document.getElementById("reportForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission to server
+
+      const startDate = document.getElementById("start-date").value;
+      const endDate = document.getElementById("end-date").value;
+      const status = document.getElementById("placement-status").value;
+      const recruiterType = document.getElementById("recruiter-type").value;
+
+      const previewContainer = document.getElementById("reportPreview");
+
+      // Basic validation
+      if (!startDate || !endDate || !status || !recruiterType) {
+        previewContainer.innerHTML = "<p>Please fill in all fields.</p>";
+        return;
+      }
+
+      // Display the filtered results
+      previewContainer.innerHTML = `
+        <h2>Report Preview</h2>
+        <p><strong>Start Date:</strong> ${startDate}</p>
+        <p><strong>End Date:</strong> ${endDate}</p>
+        <p><strong>Placement Status:</strong> ${status}</p>
+        <p><strong>Recruiter Type:</strong> ${recruiterType}</p>
+        <div class="generated-report">
+          <h3>Sample Report Data:</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Placement Status</th>
+                <th>Company</th>
+                <th>Placement Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>Placed</td>
+                <td>Company X</td>
+                <td>01/12/2024</td>
+              </tr>
+              <tr>
+                <td>Jane Smith</td>
+                <td>Not Placed</td>
+                <td>Company Y</td>
+                <td>15/12/2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `;
+    });
+
+    // Function to handle the "Back" button
+    function goBack() {
+      // Redirect to the dashboard page (dash.html)
+      window.location.href = 'dash.html';
+    }
+  </script>
+
+</body>
+</html>

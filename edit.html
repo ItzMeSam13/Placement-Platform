@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="coleege.css" />
+</head>
+<body>
+  <div class="container" id="edit-profile-page">
+    <form class="editProfileForm" action="/submit_edited_profile" method="post" enctype="multipart/form-data">
+      <h1>Edit Profile</h1>
+
+      <!-- College Information Section -->
+      <div class="subheader">College Information</div>
+      <div class="section">
+        <div class="form-group">
+          <label for="college">College Name</label>
+          <input
+            type="text"
+            id="collegeName"
+            name="college"
+            value="Sample College"
+            placeholder="Enter your college name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="college-logo">College Logo</label>
+          <input
+            type="file"
+            id="college-logo"
+            name="college-logo"
+            accept="image/*"
+          />
+        </div>
+        <div class="form-group">
+          <label for="website">College Website</label>
+          <input
+            type="url"
+            id="website"
+            name="website"
+            value="https://www.samplecollege.com"
+            placeholder="Enter your college website"
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea
+            name="address"
+            id="address"
+            rows="4"
+            placeholder="Enter your college address"
+            required
+          >Sample Address</textarea>
+        </div>
+      </div>
+
+      <!-- Placement Policy Section -->
+      <div class="subheader">Placement Policy</div>
+      <div class="section">
+        <div class="form-group">
+          <label for="eligibility">Eligibility Criteria</label>
+          <textarea
+            name="eligibility"
+            id="eligibility"
+            rows="4"
+            placeholder="Enter eligibility criteria"
+          >Sample Eligibility Criteria</textarea>
+        </div>
+        <div class="form-group">
+          <label for="placement-rules">Placement Rules</label>
+          <textarea
+            name="placement-rules"
+            id="placement-rules"
+            rows="4"
+            placeholder="Enter placement rules"
+          >Sample Placement Rules</textarea>
+        </div>
+        <div class="form-group">
+          <label for="session-start">Placement Season Start Date</label>
+          <input
+            type="date"
+            id="session-start"
+            name="session-start"
+            value="2025-01-01"
+          />
+        </div>
+        <div class="form-group">
+          <label for="session-end">Placement Season End Date</label>
+          <input
+            type="date"
+            id="session-end"
+            name="session-end"
+            value="2025-06-01"
+          />
+        </div>
+      </div>
+
+      <!-- Requirements Section -->
+      <div class="subheader">Requirements</div>
+      <div class="section">
+        <div class="form-group">
+          <label for="student-documents">Documents Required from Students</label>
+          <textarea
+            name="student-documents"
+            id="student-documents"
+            rows="4"
+            placeholder="Enter required documents from students"
+          >Sample Documents</textarea>
+        </div>
+        <div class="form-group">
+          <label for="recruiter-documents">Recruiter Requirements</label>
+          <textarea
+            name="recruiter-documents"
+            id="recruiter-documents"
+            rows="4"
+            placeholder="Enter recruiter requirements"
+          >Sample Recruiter Documents</textarea>
+        </div>
+        <div class="form-group">
+          <label for="student-data">Student Data to Collect</label>
+          <textarea
+            name="student-data"
+            id="student-data"
+            rows="4"
+            placeholder="Enter student data to collect"
+          >Sample Data</textarea>
+        </div>
+      </div>
+
+      <!-- Contact Details Section -->
+      <div class="subheader">Contact Details</div>
+      <div class="section">
+        <div class="form-group">
+          <label for="contact-name">Contact Person Name</label>
+          <input
+            type="text"
+            id="contact-name"
+            name="contact-name"
+            value="John Doe"
+            placeholder="Enter contact person's name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-phone">Contact Person Phone Number</label>
+          <input
+            type="tel"
+            id="contact-phone"
+            name="contact-phone"
+            value="1234567890"
+            placeholder="Enter contact person's phone number"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">College Email</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="contact-email"
+            value="college@example.com"
+            placeholder="Enter college email"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Password Details Section (Optional) -->
+      <div class="subheader">Password Details</div>
+      <div class="section">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value="Password123"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            value="Password123"
+            placeholder="Confirm your password"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Buttons Section -->
+      <div class="buttons-container">
+        <button type="submit" class="btn">Save Changes</button>
+        <button type="button" class="btn back-btn" onclick="goBack()">Back</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function goBack() {
+      // Navigate back to the previous page or login page
+      window.location.href = 'dash.html';
+    }
+  </script>
+</body>
+</html>

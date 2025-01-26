@@ -1,0 +1,121 @@
+/* Add this CSS for button container */
+.buttons-container {
+    display: flex;
+    justify-content: space-between; /* To align buttons on opposite sides */
+    margin-top: 20px;
+}
+
+/* Submit Button and Back Button Styling */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 48%; /* To take up half of the container width */
+    transition: background-color 0.3s ease;
+}
+
+.back-btn {
+    background-color: #f44336; /* Red color */
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+/* Submit button hover effect */
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style buttons container */
+.buttons-container button {
+    font-size: 16px;
+    padding: 12px;
+    width: 48%; /* Ensure both buttons are equally sized */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login, .container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 380px; /* Adjusted width */
+    max-height: 90vh; /* Allow container to take up more space vertically */
+    text-align: center;
+    overflow-y: auto; /* Ensure content is scrollable if necessary */
+}
+h1 {
+    margin-bottom: 20px;
+    text-align: left;
+    color: blue;
+}
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #6f6f6f;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #007bff;
+}
+.btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+p a:hover {
+    text-decoration: underline;
+}
+.subheader {
+    font-size: 18px;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: left;
+    color: #007bff;
+}
+.section {
+    margin-top: 20px;
+}
