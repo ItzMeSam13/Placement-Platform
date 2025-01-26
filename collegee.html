@@ -14,7 +14,7 @@
 					<label for="email">Email</label>
 					<input
 						type="email"
-						id="email"
+						id="loginemail"
 						name="email"
 						placeholder="Enter your email"
 						required />
@@ -23,17 +23,16 @@
 					<label for="password">Password</label>
 					<input
 						type="password"
-						id="password"
+						id="loginpassword"
 						name="password"
 						placeholder="Enter your password"
 						required />
 				</div>
 				<button type="submit" class="btn">Login</button>
 			</form>
-			<p
-				>Don't have an account?
-				<a href="#" onclick="showSignUpForm()">Sign up</a></p
-			>
+			<p>Don't have an account?
+				<a href="#" onclick="showSignUpForm()">Sign up</a>
+				</p>
 		</div>
 
 		<div class="container" id="student-details-page" style="display: none">
@@ -50,7 +49,7 @@
 						<label for="college">College Name</label>
 						<input
 							type="text"
-							id="college"
+							id="collegeName"
 							name="college"
 							placeholder="Enter your college name"
 							required />
@@ -62,7 +61,7 @@
 							id="college-logo"
 							name="college-logo"
 							accept="image/*"
-							required />
+							 />
 					</div>
 					<div class="form-group">
 						<label for="website">College Website</label>
@@ -71,7 +70,7 @@
 							id="website"
 							name="website"
 							placeholder="Enter your college website"
-							required />
+							 />
 					</div>
 					<div class="form-group">
 						<label for="address">Address</label>
@@ -94,7 +93,7 @@
 							id="eligibility"
 							rows="4"
 							placeholder="Enter eligibility criteria"
-							required></textarea>
+							></textarea>
 					</div>
 					<div class="form-group">
 						<label for="placement-rules">Placement Rules</label>
@@ -103,7 +102,7 @@
 							id="placement-rules"
 							rows="4"
 							placeholder="Enter placement rules"
-							required></textarea>
+							></textarea>
 					</div>
 					<div class="form-group">
 						<label for="session-start">Placement Season Start Date</label>
@@ -111,11 +110,11 @@
 							type="date"
 							id="session-start"
 							name="session-start"
-							required />
+							/>
 					</div>
 					<div class="form-group">
 						<label for="session-end">Placement Season End Date</label>
-						<input type="date" id="session-end" name="session-end" required />
+						<input type="date" id="session-end" name="session-end" />
 					</div>
 				</div>
 
@@ -131,7 +130,7 @@
 							id="student-documents"
 							rows="4"
 							placeholder="Enter required documents from students"
-							required></textarea>
+							></textarea>
 					</div>
 					<div class="form-group">
 						<label for="recruiter-documents">Recruiter Requirements</label>
@@ -140,7 +139,7 @@
 							id="recruiter-documents"
 							rows="4"
 							placeholder="Enter recruiter requirements"
-							required></textarea>
+							></textarea>
 					</div>
 					<div class="form-group">
 						<label for="student-data">Student Data to Collect</label>
@@ -149,7 +148,7 @@
 							id="student-data"
 							rows="4"
 							placeholder="Enter student data to collect"
-							required></textarea>
+							></textarea>
 					</div>
 				</div>
 
@@ -166,21 +165,21 @@
 							required />
 					</div>
 					<div class="form-group">
-						<label for="contact-email">Contact Person Email</label>
-						<input
-							type="email"
-							id="contact-email"
-							name="contact-email"
-							placeholder="Enter contact person's email"
-							required />
-					</div>
-					<div class="form-group">
 						<label for="contact-phone">Contact Person Phone Number</label>
 						<input
 							type="tel"
 							id="contact-phone"
 							name="contact-phone"
 							placeholder="Enter contact person's phone number"
+							required />
+					</div>
+					<div class="form-group">
+						<label for="contact-email">College Email</label>
+						<input
+							type="email"
+							id="contact-email"
+							name="contact-email"
+							placeholder="Enter college email"
 							required />
 					</div>
 				</div>
@@ -230,5 +229,7 @@
 				document.getElementById("login-page").style.display = "block";
 			}
 		</script>
+		<script type="module" src="Authentication/college.js"></script>
+		<script type="module" src="main.js"></script>
 	</body>
 </html>
