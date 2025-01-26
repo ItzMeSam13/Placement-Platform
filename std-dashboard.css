@@ -17,7 +17,7 @@ color: #333;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .edit-btn{
-    background-color: #2980b9;
+    background-color: #1f6e8c;
     color: white;
     padding: 12px 25px;
     font-size: 18px;
@@ -27,7 +27,7 @@ color: #333;
     transition: background-color 0.3s ease;
 }
 .edit-btn:hover{
-    background-color: #1f6e8c;
+    background-color: #2abdf8;
 }
 .view-btn{
     background-color: #2980b9;

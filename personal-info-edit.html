@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Information</title>
+    <link rel="stylesheet" href="personal-info-edit.css">
+</head>
+<body>
+    <div class="edit-container">
+        <h1>Edit Information</h1>
+        <form action="/update-student-info" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" value="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" value="Johndoe@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="roll-number">Roll Number:</label>
+                <input type="text" id="number" value="12345" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" id="department" value="Computer Engineering" required>
+            </div>
+            <div class="form-group">
+                <label for="CV">Add CV:</label>
+                <input type="file" id="CV" accept=".pdf .doc .docx" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="save-btn">Save</button>
+                <button type="button" class="cancel-btn" onrclick="window.history.back">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
