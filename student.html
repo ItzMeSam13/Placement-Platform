@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Student Section</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+       
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Student Section</a></li>
+            <li><a href="#">Recruiter Section</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <header>
+            <h1 class="section-title">Student Section</h1>
+        </header>
+
+        <!-- Statistics Section -->
+        <div class="statistics">
+            <div class="stat">
+                <h3>Total Students</h3>
+                <p id="total-students">300</p>
+            </div>
+            <div class="stat">
+                <h3>Placed Students</h3>
+                <p id="placed-students">130</p>
+            </div>
+            <div class="stat">
+                <h3>Companies Applied</h3>
+                <p id="companies-applied">200</p>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <label for="branch-select">Select Branch:</label>
+            <select id="branch-select" onchange="filterStudents()">
+                <option value="">--Select Branch--</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="VLSI">VLSI</option>
+                <option value="ETC">ETC</option>
+                <option value="ENE">ENE</option>
+            </select>
+
+            <label for="semester-select">Select Semester:</label>
+            <select id="semester-select" onchange="filterStudents()">
+                <option value="">--Select Semester--</option>
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+            </select>
+
+            <label for="name-search">Search by Name:</label>
+            <input type="text" id="name-search" onkeyup="filterStudents()" placeholder="Enter student name...">
+        </div>
+
+        <!-- Student List Table -->
+        <div class="student-list">
+            <table class="student-table" id="student-table">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Branch</th>
+                        <th>Semester</th>
+                        <th>Status</th>
+                        <th>Companies Applied</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Student Rows Here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal for displaying student details -->
+    <div id="student-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Student Details</h2>
+            <p><strong>Name:</strong> <span class="modal-name"></span></p>
+            <p><strong>Branch:</strong> <span class="modal-branch"></span></p>
+            <p><strong>Semester:</strong> <span class="modal-semester"></span></p>
+            <p><strong>Status:</strong> <span class="modal-status"></span></p>
+            <p><strong>Companies Applied:</strong> <span class="modal-companies"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Sample students data
+const students = [
+    { id: 1, name: "rakesh sharma", branch: "Computer Engineering", semester: 7, status: "Placed", companies: "Company A, Company B" },
+    { id: 2, name: "vinay naik", branch: "Civil Engineering", semester: 8, status: "Pending", companies: "Company C" },
+    { id: 3, name: "riya desai", branch: "Information Technology", semester: 6, status: "Placed", companies: "Company D, Company E" },
+    { id: 4, name: "john pinto", branch: "VLSI", semester: 6, status: "Pending", companies: "Company F" },
+    { id: 5, name: "Charlie Lee", branch: "ETC", semester: 7, status: " ", companies: "Not applied" },
+    { id: 6, name: "sarvesh verma", branch: "ENE", semester: 8, status: "Placed", companies: "Company H" }
+];
+
+// Function to populate the table with student data
+function populateStudentTable(filteredStudents) {
+    const studentTableBody = document.getElementById("student-table").getElementsByTagName("tbody")[0];
+    studentTableBody.innerHTML = ""; // Clear existing rows
+
+    filteredStudents.forEach(student => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${student.id}</td>
+            <td>${student.name}</td>
+            <td>${student.branch}</td>
+            <td>${student.semester}</td>
+            <td>${student.status}</td>
+            <td>${student.companies}</td>
+            <td><button class="view-btn" onclick="viewStudentDetails(${student.id})">View</button></td>
+        `;
+
+        studentTableBody.appendChild(row);
+    });
+}
+
+// Function to filter students
+function filterStudents() {
+    const branch = document.getElementById("branch-select").value.toLowerCase();
+    const semester = document.getElementById("semester-select").value;
+    const nameSearch = document.getElementById("name-search").value.toLowerCase();
+
+    const filteredStudents = students.filter(student => {
+        const matchesBranch = branch ? student.branch.toLowerCase().includes(branch) : true;
+        const matchesSemester = semester ? student.semester == semester : true;
+        const matchesName = student.name.toLowerCase().includes(nameSearch);
+
+        return matchesBranch && matchesSemester && matchesName;
+    });
+
+    populateStudentTable(filteredStudents);
+}
+
+// Function to show student details in modal
+function viewStudentDetails(studentId) {
+    const student = students.find(student => student.id === studentId);
+
+    if (student) {
+        document.querySelector(".modal-name").textContent = student.name;
+        document.querySelector(".modal-branch").textContent = student.branch;
+        document.querySelector(".modal-semester").textContent = student.semester;
+        document.querySelector(".modal-status").textContent = student.status;
+        document.querySelector(".modal-companies").textContent = student.companies;
+
+        document.getElementById("student-modal").style.display = "block";
+    }
+}
+
+// Close the modal when the close button is clicked
+document.querySelector(".close-btn").addEventListener("click", () => {
+    document.getElementById("student-modal").style.display = "none";
+});
+
+// Close the modal when clicked outside of the modal content
+window.onclick = function(event) {
+    if (event.target == document.getElementById("student-modal")) {
+        document.getElementById("student-modal").style.display = "none";
+    }
+};
+
+// Initial population of the table with all students
+populateStudentTable(students);
+// Filter and Modal Functions here (same as before)
+    </script>
+</body>
+</html>
