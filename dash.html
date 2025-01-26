@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Admin Dashboard</title>
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <h2>PlacementHub Admin</h2>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#students">Students</a></li>
+      <li><a href="#recruiters">Recruiters</a></li>
+      <li><a href="#stats">Statistics</a></li>
+      <li><a href="#reports">Reports</a></li>
+    </ul>
+  </nav>
+
+  <div class="dashboard">
+    <header class="header">
+      <h1>Welcome, <span class="admin-name">[Admin Name]</span></h1>
+      <p>Manage your college's placement activities effortlessly.</p>
+      <button class="edit-profile-btn">Edit Profile</button>
+    </header>
+
+    <div class="container">
+      <!-- Section 1: Students -->
+      <section class="students card" id="students">
+        <h2>Student Management</h2>
+        <p>View and manage registered students.</p>
+        <button class="action-btn green-btn">View Students</button>
+      </section>
+
+      <!-- Section 2: Recruiters -->
+      <section class="recruiters card" id="recruiters">
+        <h2>Recruiter Management</h2>
+        <p>Manage recruiter registrations and activity.</p>
+        <button class="action-btn blue-btn">View Recruiters</button>
+      </section>
+
+      <!-- Section 3: Placement Statistics -->
+      <section class="statistics card" id="stats">
+        <h2>Placement Statistics</h2>
+        <ul>
+          <li><strong>Total Students:</strong> 500</li>
+          <li><strong>Placed Students:</strong> 350</li>
+          <li><strong>Recruiters Participating:</strong> 120</li>
+          <li><strong>Placement Drives:</strong> 25</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: Reports -->
+      <section class="reports card" id="reports">
+        <h2>Generate Reports</h2>
+        <p>Create and download placement reports.</p>
+        <button class="action-btn red-btn">Generate Report</button>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 PlacementHub Admin. All rights reserved.</p>
+  </footer>
+</body>
+</html>

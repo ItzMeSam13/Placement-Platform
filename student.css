@@ -1,0 +1,220 @@
+/* General Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #005b96;
+    color: white;
+    width: 230px;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    border-right: 2px solid #004b72;
+}
+
+.sidebar .logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #006db3;
+    border-radius: 5px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #004a7c;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+/* Simple and Clean Header Design */
+
+
+    /* Simple and Bold Header for Student Section */
+/* Updated Header Style with Underline */
+header {
+    text-align: center;
+    color: #1a69b8; /* Professional dark blue */
+    margin-top: 0px; /* Space above the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+header .section-title {
+    font-size: 2.5rem; /* Big and bold title */
+    font-weight: 700; /* Bold for emphasis */
+    letter-spacing: 0.5px; /* Slight spacing for clarity */
+    line-height: 1.2; /* Balanced line height */
+    margin: 0; /* No extra margins */
+    text-transform: uppercase; /* Optional: Makes it all uppercase */
+
+}
+
+
+
+
+.statistics {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.stat {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+.stat h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.stat p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #005b96;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.search-section label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.search-section select,
+.search-section input {
+    padding: 12px;
+    font-size: 14px;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+.student-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.student-list th,
+.student-list td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.student-list th {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.student-list td {
+    background-color: #fff;
+}
+
+.view-btn {
+    padding: 6px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.view-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.modal-content span {
+    font-weight: bold;
+}

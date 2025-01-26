@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Management</title>
+    <link rel="stylesheet" href="recruit.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Student Section</a></li>
+            <li><a href="#" class="active">Recruiter Section</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header>
+            <h1 class="section-title">Recruiter Section</h1>
+        </header>
+
+        <!-- Dashboard Overview -->
+        <div class="statistics">
+            <div class="stat">
+                <h3>Total Job Postings</h3>
+                <p id="total-jobs">25</p>
+            </div>
+            <div class="stat">
+                <h3>Total Applications</h3>
+                <p id="total-applications">200</p>
+            </div>
+            <div class="stat">
+                <h3>Ongoing Drives</h3>
+                <p id="ongoing-drives">10</p>
+            </div>
+        </div>
+
+        <!-- Recruiter Management -->
+        <section class="recruiter-management">
+            <h2>Recruiter Management</h2>
+            <button class="add-btn">+ Add Recruiter</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact Person</th>
+                        <th>Email</th>
+                        <th>Job Openings</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Company A</td>
+                        <td>John Doe</td>
+                        <td>john.doe@companya.com</td>
+                        <td>5</td>
+                        <td><button class="view-btn" onclick="openModal('Company A', 'John Doe', 'john.doe@companya.com', 5)">View</button> <button class="delete-btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Company B</td>
+                        <td>Jane Smith</td>
+                        <td>jane.smith@companyb.com</td>
+                        <td>3</td>
+                        <td><button class="view-btn" onclick="openModal('Company B', 'Jane Smith', 'jane.smith@companyb.com', 3)">View</button> <button class="delete-btn">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Job Posting Section -->
+        <section class="job-posting">
+            <h2>Job Postings</h2>
+            <button class="add-btn">+ Create Job Posting</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>Status</th>
+                        <th>Applications</th>
+                        <th>Deadline</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Software Engineer</td>
+                        <td>Company A</td>
+                        <td>Open</td>
+                        <td>45</td>
+                        <td>2025-03-15</td>
+                        <td><button class="view-btn" onclick="openModal('Software Engineer', 'Company A', 'Open', 45, '2025-03-15')">View</button> <button class="edit-btn">Edit</button></td>
+                    </tr>
+                    <tr>
+                        <td>Project Manager</td>
+                        <td>Company B</td>
+                        <td>Closed</td>
+                        <td>12</td>
+                        <td>2025-01-31</td>
+                        <td><button class="view-btn" onclick="openModal('Project Manager', 'Company B', 'Closed', 12, '2025-01-31')">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Recruitment Process Management -->
+        <section class="process-management">
+            <h2>Recruitment Process Management</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drive Name</th>
+                        <th>Rounds</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Drive A</td>
+                        <td>Online Test, Interview</td>
+                        <td>Ongoing</td>
+                        <td><button class="progress-btn" onclick="openProcessModal('Drive A', 'Online Test, Interview', 'Ongoing', 100, ['John Doe', 'Jane Smith'])">View Progress</button></td>
+                    </tr>
+                    <tr>
+                        <td>Drive B</td>
+                        <td>Interview</td>
+                        <td>Completed</td>
+                        <td><button class="progress-btn" onclick="openProcessModal('Drive B', 'Interview', 'Completed', 50, ['Alice Brown', 'Bob White'])">View Results</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Modal for details -->
+        <div class="modal" id="detail-modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal()">X</button>
+                <h2>Details</h2>
+                <p id="modal-content"></p>
+            </div>
+        </div>
+
+        <!-- Modal for process details -->
+        <div class="modal" id="process-modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeProcessModal()">X</button>
+                <h2>Process Details</h2>
+                <p id="process-content"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to open job posting modal
+        function openModal(title, company, status, applications, deadline) {
+            const modal = document.getElementById('detail-modal');
+            const modalContent = document.getElementById('modal-content');
+
+            modal.style.display = 'flex';
+            modalContent.innerHTML = `
+                <strong>Title/Name:</strong> ${title} <br>
+                <strong>Company:</strong> ${company} <br>
+                <strong>Status:</strong> ${status} <br>
+                <strong>Applications:</strong> ${applications} <br>
+                <strong>Deadline:</strong> ${deadline}
+            `;
+        }
+
+        // Function to open recruitment process modal
+        function openProcessModal(driveName, rounds, status, studentsCount, placedStudents) {
+            const modal = document.getElementById('process-modal');
+            const processContent = document.getElementById('process-content');
+
+            modal.style.display = 'flex';
+            processContent.innerHTML = `
+                <strong>Drive Name:</strong> ${driveName} <br>
+                <strong>Rounds:</strong> ${rounds} <br>
+                <strong>Status:</strong> ${status} <br>
+                <strong>Students Participated:</strong> ${studentsCount} <br>
+                <strong>Placed Students:</strong> <br> ${placedStudents.join('<br>')}
+            `;
+        }
+
+        // Function to close the job posting modal
+        function closeModal() {
+            const modal = document.getElementById('detail-modal');
+            modal.style.display = 'none';
+        }
+
+        // Function to close the recruitment process modal
+        function closeProcessModal() {
+            const modal = document.getElementById('process-modal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
