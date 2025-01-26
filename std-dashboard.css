@@ -16,6 +16,32 @@ color: #333;
     padding: 15px 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+.edit-btn{
+    background-color: #2980b9;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.edit-btn:hover{
+    background-color: #1f6e8c;
+}
+.view-btn{
+    background-color: #2980b9;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.view-btn:hover{
+    background-color: #1f6e8c;
+}
 .navbar .logo h2{
     color: white;
     font-size: 24px;
@@ -24,6 +50,9 @@ color: #333;
 .navbar ul{
     list-style: none;
     display: flex;
+}
+.edit-btn:hover{
+    background-color: #1f6e8c;
 }
 .navbar li{
     margin-right: 25px;
