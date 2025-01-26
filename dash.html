@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="dash.css">
 </head>
 <body>
+  
+
   <nav class="navbar">
     <div class="logo">
       <h2>PlacementHub Admin</h2>
@@ -24,7 +26,7 @@
     <header class="header">
       <h1>Welcome, <span class="admin-name">[Admin Name]</span></h1>
       <p>Manage your college's placement activities effortlessly.</p>
-      <button class="edit-profile-btn">Edit Profile</button>
+      <a href="edit.html" class="action-btn green-btn">Edit Profile</a>
     </header>
 
     <div class="container">
@@ -32,14 +34,16 @@
       <section class="students card" id="students">
         <h2>Student Management</h2>
         <p>View and manage registered students.</p>
-        <button class="action-btn green-btn">View Students</button>
+        <!-- Changed button to link to student.html -->
+        <a href="student.html" class="action-btn green-btn">View Students</a>
       </section>
 
       <!-- Section 2: Recruiters -->
       <section class="recruiters card" id="recruiters">
         <h2>Recruiter Management</h2>
         <p>Manage recruiter registrations and activity.</p>
-        <button class="action-btn blue-btn">View Recruiters</button>
+        <!-- Changed button to link to recruit.html -->
+        <a href="recruit.html" class="action-btn blue-btn">View Recruiters</a>
       </section>
 
       <!-- Section 3: Placement Statistics -->
@@ -57,13 +61,20 @@
       <section class="reports card" id="reports">
         <h2>Generate Reports</h2>
         <p>Create and download placement reports.</p>
-        <button class="action-btn red-btn">Generate Report</button>
+        <a href="generatereport.html" class="action-btn blue-btn">Generate Report</a>
       </section>
     </div>
   </div>
+  <!-- Back Button -->
+<div class="back-button">
+  <a href="collegee.html" class="action-btn back-btn">Back</a>
+  
+</div>
+
 
   <footer>
     <p>&copy; 2025 PlacementHub Admin. All rights reserved.</p>
   </footer>
+  
 </body>
 </html>

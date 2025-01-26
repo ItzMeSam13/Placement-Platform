@@ -12,10 +12,11 @@
     <div class="sidebar">
         <h2>Admin Dashboard</h2>
         <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Student Section</a></li>
+            <li><a href="dash.html">Dashboard</a></li>
+            <li><a href="student.html">Student Section</a></li>
             <li><a href="#" class="active">Recruiter Section</a></li>
-            <li><a href="#">Settings</a></li>
+            <li><a href="dash.html">Back</a></li>
+            <li><a href="collegee.html">Log Out</a></li>
         </ul>
     </div>
 
@@ -62,14 +63,20 @@
                         <td>John Doe</td>
                         <td>john.doe@companya.com</td>
                         <td>5</td>
-                        <td><button class="view-btn" onclick="openModal('Company A', 'John Doe', 'john.doe@companya.com', 5)">View</button> <button class="delete-btn">Delete</button></td>
+                        <td>
+                            <button class="view-btn" onclick="openModal('Company A', 'John Doe', 'john.doe@companya.com', 5)">View</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Company B</td>
                         <td>Jane Smith</td>
                         <td>jane.smith@companyb.com</td>
                         <td>3</td>
-                        <td><button class="view-btn" onclick="openModal('Company B', 'Jane Smith', 'jane.smith@companyb.com', 3)">View</button> <button class="delete-btn">Delete</button></td>
+                        <td>
+                            <button class="view-btn" onclick="openModal('Company B', 'Jane Smith', 'jane.smith@companyb.com', 3)">View</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -97,7 +104,10 @@
                         <td>Open</td>
                         <td>45</td>
                         <td>2025-03-15</td>
-                        <td><button class="view-btn" onclick="openModal('Software Engineer', 'Company A', 'Open', 45, '2025-03-15')">View</button> <button class="edit-btn">Edit</button></td>
+                        <td>
+                            <button class="view-btn" onclick="openModal('Software Engineer', 'Company A', 'Open', 45, '2025-03-15')">View</button>
+                            <button class="edit-btn">Edit</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Project Manager</td>
@@ -105,7 +115,9 @@
                         <td>Closed</td>
                         <td>12</td>
                         <td>2025-01-31</td>
-                        <td><button class="view-btn" onclick="openModal('Project Manager', 'Company B', 'Closed', 12, '2025-01-31')">View</button></td>
+                        <td>
+                            <button class="view-btn" onclick="openModal('Project Manager', 'Company B', 'Closed', 12, '2025-01-31')">View</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -128,13 +140,17 @@
                         <td>Drive A</td>
                         <td>Online Test, Interview</td>
                         <td>Ongoing</td>
-                        <td><button class="progress-btn" onclick="openProcessModal('Drive A', 'Online Test, Interview', 'Ongoing', 100, ['John Doe', 'Jane Smith'])">View Progress</button></td>
+                        <td>
+                            <button class="progress-btn" onclick="openProcessModal('Drive A', 'Online Test, Interview', 'Ongoing', 100, ['John Doe', 'Jane Smith'])">View Progress</button>
+                        </td>
                     </tr>
                     <tr>
                         <td>Drive B</td>
                         <td>Interview</td>
                         <td>Completed</td>
-                        <td><button class="progress-btn" onclick="openProcessModal('Drive B', 'Interview', 'Completed', 50, ['Alice Brown', 'Bob White'])">View Results</button></td>
+                        <td>
+                            <button class="progress-btn" onclick="openProcessModal('Drive B', 'Interview', 'Completed', 50, ['Alice Brown', 'Bob White'])">View Results</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -202,6 +218,19 @@
             const modal = document.getElementById('process-modal');
             modal.style.display = 'none';
         }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const detailModal = document.getElementById('detail-modal');
+            const processModal = document.getElementById('process-modal');
+            if (event.target === detailModal) {
+                closeModal();
+            }
+            if (event.target === processModal) {
+                closeProcessModal();
+            }
+        };
     </script>
 </body>
 </html>
+
