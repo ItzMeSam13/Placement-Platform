@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="std-dashboard.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <h2>PlacementHub</h2>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#apply">Apply</a></li>
+      <li><a href="#companies">Companies</a></li>
+      <li><a href="#progress">Progress</a></li>
+    </ul>
+  </nav>
+  <div class="dashboard">
+    <header class="header">
+      <h1>Student Dashboard</h1>
+      <p>Welcome, <span class="student-name">[Student Name]</span></p>
+    </header>
+    <div class="container">
+      <section class="personal-info card" id="profile">
+        <h2>Personal Information</h2>
+        <ul>
+          <li><strong>Name:</strong> John Doe</li>
+          <li><strong>Email:</strong> johndoe@example.com</li>
+          <li><strong>Roll Number:</strong> 12345</li>
+          <li><strong>Department:</strong> Computer Engineering</li>
+        </ul>
+      </section>
+      <section class="applied-companies card" id="companies">
+        <h2>Applied Companies</h2>
+        <ul>
+          <li>Company A - Status: Pending</li>
+          <li>Company B - Status: Interview Scheduled</li>
+          <li>Company C - Status: Selected</li>
+        </ul>
+      </section>
+      <section class="progress card" id="progress">
+        <h2>Overall Progress</h2>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 70%;"></div>
+        </div>
+        <p>70% Complete</p>
+      </section>
+      <section class="apply card" id="apply">
+        <h2>Apply for Jobs</h2>
+        <p>Find and apply to your preferred companies here.</p>
+        <button class="apply-btn">Apply Now</button>
+      </section>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 PlacementHub. All rights reserved.</p>
+  </footer>
+</body>
+</html>
