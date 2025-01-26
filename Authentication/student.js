@@ -1,8 +1,7 @@
 import { auth, db } from "../main.js"; // Importing the Firebase auth instance
 import {
 	collection,
-	doc,
-	setDoc, // Use setDoc to set the document with a specific ID
+	addDoc,
 } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
 import {
 	signInWithEmailAndPassword,
@@ -76,12 +75,9 @@ async function handleRegistration(event) {
 			branch: document.getElementById("branch").value,
 			resume: document.getElementById("resume").files[0]?.name, // You can handle resume upload separately
 		};
-
-		// Store student details in Firestore using the UID as the document ID
-		const studentRef = doc(db, "students", userCredential.user.uid); // Use userCredential.user.uid as the document ID
-		await setDoc(studentRef, studentDetails); // Add the student details to Firestore
-
-		console.log("Document written with UID: ", userCredential.user.uid);
+		// Add student details to Firestore
+		const docRef = await addDoc(collection(db, "students"), studentDetails);
+		console.log("Document written with ID: ", docRef.id);
 
 		// Pass additional details (for now, store in localStorage)
 		localStorage.setItem("studentData", JSON.stringify(studentDetails)); // Store extra data in localStorage
@@ -97,7 +93,6 @@ async function handleRegistration(event) {
 // Event Listeners
 loginForm.addEventListener("submit", handleLogin);
 studentDetailsForm.addEventListener("submit", handleRegistration);
-
 function showLoginForm() {
 	// Hide the registration form
 	document.getElementById("student-details-page").style.display = "none";
