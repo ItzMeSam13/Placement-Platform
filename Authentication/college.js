@@ -24,6 +24,7 @@ loginForm.addEventListener('submit', async (e) => {
         console.log('Login successful:', userCredential.user);
         alert('Login successful!');
         // Redirect or load college dashboard
+        window.location.href = 'dash.html';
     } catch (error) {
         console.error('Error logging in:', error.message);
         showError(error.message);
@@ -65,7 +66,7 @@ registerForm.addEventListener('submit', async (e) => {
         // Save college data temporarily for now (Firestore will be used later)
         console.log('College Data:', collegeData);
         alert('Registration successful!');
-
+        window.location.href = 'collegee.html';
         // Clear form or redirect as needed
         registerForm.reset();
     } catch (error) {

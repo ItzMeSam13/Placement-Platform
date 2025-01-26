@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Student Dashboard</title>
-  <link rel="stylesheet" href="std-dashboard.css">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">
-      <h2>PlacementHub</h2>
-    </div>
-    <ul>
-      <li><a href="#logout">Logout</a></li>
-    </ul>
-  </nav>
-  <div class="dashboard">
-    <header class="header">
-      <h1>Student Dashboard</h1>
-      <p>Welcome, <span class="student-name">[Student Name]</span></p>
-    </header>
-    <div class="container">
-      <section class="personal-info card" id="profile">
-        <h2>Personal Information</h2>
-        <ul>
-          <li><strong>Name:</strong> John Doe</li>
-          <li><strong>Email:</strong> johndoe@example.com</li>
-          <li><strong>Roll Number:</strong> 12345</li>
-          <li><strong>Department:</strong> Computer Engineering</li>
-         
-          <a href="personal-info-edit.html"> <button class="edit-btn">Edit</button></a>
-        </ul>
-      </section>
-      <section class="applied-companies card" id="companies">
-        <h2>Applied Companies</h2>
-        <ul>
-          <li>Company A - Status: Pending</li>
-          <li>Company B - Status: Interview Scheduled</li>
-          <li>Company C - Status: Selected</li>
-          <a href="applied-companies.html"><button class="view-btn">View</button></a>
-        </ul>
-      </section>
-      <section class="progress card" id="progress">
-        <h2>Overall Progress</h2>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width: 70%;"></div>
-        </div>
-        <p>70% Complete</p>
-      </section>
-      <section class="apply card" id="apply">
-        <h2>Apply for Jobs</h2>
-        <p>Find and apply to your preferred companies here.</p>
-        <a href="apply-jobs.html"><button class="apply-btn">Apply Now</button></a>
-      </section>
-    </div>
-  </div>
-  <footer>
-    <p>&copy; 2025 PlacementHub. All rights reserved.</p>
-  </footer>
-</body>
+	<head>
+		<title>Student Dashboard</title>
+		<link rel="stylesheet" href="std-dashboard.css" />
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="logo">
+				<h2>PlacementHub</h2>
+			</div>
+			<ul>
+				<li><a href="#logout">Logout</a></li>
+			</ul>
+		</nav>
+		<div class="dashboard">
+			<header class="header">
+				<h1>Student Dashboard</h1>
+				<p>Welcome, <span class="student-name">[Student Name]</span></p>
+			</header>
+			<div class="container">
+				<section class="personal-info card" id="profile">
+					<h2>Personal Information</h2>
+					<ul id="profile">
+						<li><strong>Name:</strong> John Doe</li>
+						<li><strong>Email:</strong> johndoe@example.com</li>
+						<li><strong>Dob:</strong> 12345</li>
+            <li><strong>Address: </strong> </li>
+            <li><strong>Mobile:</strong> </li>
+            <li><strong>City:</strong> </li>
+            <li><strong>College:</strong> </li>
+						<li><strong>Department:</strong> Computer Engineering</li>
+            <li><strong>Resume:</strong> Resume</li>
+						<a href="personal-info-edit.html">
+							<button class="edit-btn">Edit</button></a
+						>
+					</ul>
+				</section>
+				<section class="applied-companies card" id="companies">
+					<h2>Applied Companies</h2>
+					<ul>
+						<li>Company A - Status: Pending</li>
+						<li>Company B - Status: Interview Scheduled</li>
+						<li>Company C - Status: Selected</li>
+						<a href="applied-companies.html"
+							><button class="view-btn">View</button></a
+						>
+					</ul>
+				</section>
+				<section class="progress card" id="progress">
+					<h2>Overall Progress</h2>
+					<div class="progress-bar">
+						<div class="progress-fill" style="width: 70%"></div>
+					</div>
+					<p>70% Complete</p>
+				</section>
+				<section class="apply card" id="apply">
+					<h2>Apply for Jobs</h2>
+					<p>Find and apply to your preferred companies here.</p>
+					<a href="apply-jobs.html"
+						><button class="apply-btn">Apply Now</button></a
+					>
+				</section>
+			</div>
+		</div>
+		<footer>
+			<p>&copy; 2025 PlacementHub. All rights reserved.</p>
+		</footer>
+		<script type="module" src="Dashboard/std-dashboard.js"></script>
+	</body>
 </html>

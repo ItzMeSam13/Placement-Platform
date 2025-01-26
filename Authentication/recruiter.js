@@ -1,61 +1,69 @@
-// Import the Firebase auth module and the initialized Firebase app from main.js
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
-import { auth } from "../main.js"; // Importing the initialized auth instance from main.js
+import { auth } from '../main.js'; // Importing the Firebase auth instance
+import { 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword 
+} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 
-// DOM elements for login and registration forms
-const loginForm = document.querySelector('.loginForm'); // Correct class for login form
-const registerForm = document.querySelector('.registerForm'); // Correct class for registration form
+// DOM references
+const loginForm = document.querySelector('.loginForm');
+const registerForm = document.querySelector('.registerForm');
 
-// Handle Login Form
-loginForm.addEventListener('submit', (e) => {
+// Helper function to show error messages
+function showError(message) {
+    alert(message); // Replace this with a custom error display in the UI if needed
+}
+
+// Login handler
+loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
 
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log('Logged in successfully:', user.email);
-            alert('Logged in successfully!');
-            window.location.href = "dashboard.html"; // Redirect to dashboard or home page
-        })
-        .catch((error) => {
-            console.error(error.message);
-            alert('Login failed: ' + error.message);
-        });
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        console.log('Login successful:', userCredential.user);
+        alert('Login successful!');
+        window.location.href = 'recruiter-dashboard.html';
+        // Redirect to recruiter dashboard or perform other actions
+    } catch (error) {
+        console.error('Error logging in:', error.message);
+        showError(error.message);
+    }
 });
 
-// Handle Registration Form
-registerForm.addEventListener('submit', (e) => {
+// Registration handler
+registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const companyName = document.getElementById('company').value; // Correct ID for company name
-    const email = document.getElementById('email').value; // Correct ID for email
-    const contactNumber = document.getElementById('contactNumber').value; // Correct ID for contact number
-    const password = document.getElementById('password').value; // Correct ID for password
-    const confirmPassword = document.getElementById('confirmPassword').value; // Correct ID for confirm password
-    const industry = document.getElementById('industry').value; // Correct ID for industry type
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Basic validation for matching passwords
     if (password !== confirmPassword) {
-        alert('Passwords do not match');
+        showError('Passwords do not match!');
         return;
     }
 
-    // Create user account
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log('User created successfully:', user.email);
-            alert('Account created successfully!');
+    // Collecting additional recruiter data
+    const recruiterData = {
+        companyName: document.getElementById('company').value,
+        contactNumber: document.getElementById('contactNumber').value,
+        industry: document.getElementById('industry').value,
+        profile: document.getElementById('profile').files[0]?.name || 'Not uploaded', // For simplicity
+    };
 
-            // Store additional user details (company name, contact number, etc.) in Firestore or Realtime Database (optional)
-            // For now, you can save the user details here or in Firestore.
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        console.log('Registration successful:', userCredential.user);
 
-            // Redirect to dashboard or home page after registration
-            window.location.href = "dashboard.html";
-        })
-        .catch((error) => {
-            console.error(error.message);
-            alert('Registration failed: ' + error.message);
-        });
+        // Save recruiter data temporarily for now (Firestore or Realtime Database will be used later)
+        console.log('Recruiter Data:', recruiterData);
+        alert('Registration successful!');
+        window.location.href = 'Rec-Reg.html'; // Redirect to the login page for recruiters
+
+        // Clear the form or redirect to a new page
+        registerForm.reset();
+    } catch (error) {
+        console.error('Error registering:', error.message);
+        showError(error.message);
+    }
 });
